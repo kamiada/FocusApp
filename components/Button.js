@@ -10,8 +10,15 @@ class Button extends React.Component {
         }
     }
     handlePress = () => {
-        this.setState = {
-            text : 'Stop'
+        if(this.state.text === 'Start'){
+            this.setState ({
+                text : 'Stop'
+            })
+        }
+        else if(this.state.text === 'Stop'){
+            this.setState({
+                text: 'Start'
+            })
         }
     }
     render(){
