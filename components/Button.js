@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TouchableOpacity, View, Image } from "react-native";
+import { Text, TouchableOpacity, View, Image, ImageBackground } from "react-native";
 import styles from "../styles";
 
 class Button extends React.Component {
@@ -24,9 +24,8 @@ class Button extends React.Component {
     render(){
         return(
             <View style={styles.button}>
-            <TouchableOpacity onPress={this.handlePress}>
-                <Text>{this.state.text}</Text>
-                <Image source={require("../assets/Button.png")}/>
+            <TouchableOpacity onPress={this.handlePress} style={styles.image}>
+                <Text style={styles.text}>{this.state.text}</Text>
             </TouchableOpacity>
           </View>
         );
