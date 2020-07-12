@@ -3,12 +3,22 @@ import { Text, TouchableOpacity, View, Image } from "react-native";
 import styles from "../styles";
 
 class Button extends React.Component {
-    handlePress = () => {}
+    constructor(){
+        super();
+        this.state = {
+            text : 'Start'
+        }
+    }
+    handlePress = () => {
+        this.setState = {
+            text : 'Stop'
+        }
+    }
     render(){
         return(
             <View style={styles.button}>
             <TouchableOpacity onPress={this.handlePress}>
-                <Text>Start</Text>
+                <Text>{this.state.text}</Text>
                 <Image source={require("../assets/Button.png")}/>
             </TouchableOpacity>
           </View>
