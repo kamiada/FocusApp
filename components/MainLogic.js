@@ -1,8 +1,9 @@
 import React from "react";
 import { Text, TouchableOpacity, View, Image, ImageBackground } from "react-native";
 import styles from "../styles";
+import Timer from "./Timer";
 
-class Button extends React.Component {
+class MainLogic extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -23,7 +24,14 @@ class Button extends React.Component {
     }
     render(){
         return(
-            <View style={styles.button}>
+            <View style={styles.center}>
+            <View>
+                <TouchableOpacity style={styles.circle}>
+                <View style={styles.center}>
+                <ImageBackground style={styles.water} source={{ uri: 'https://priteshgupta.com/demos/fill/waves.png',}}/>
+                </View>
+                </TouchableOpacity>
+            </View>
             <TouchableOpacity onPress={this.handlePress} style={styles.image}>
                 <Text style={styles.text}>{this.state.text}</Text>
             </TouchableOpacity>
@@ -31,4 +39,4 @@ class Button extends React.Component {
         );
     }
 }
-export default Button;
+export default MainLogic;
