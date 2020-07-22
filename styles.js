@@ -6,7 +6,22 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#AAF0C8',
+  },
+  gradient :{
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 300,
+  },
   background: {
+    flex: 1,
+    flexDirection: "column" ,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -18,7 +33,7 @@ export default StyleSheet.create({
   },
   image: {
     height:50,
-    width:150,
+    width:250,
     backgroundColor: "#2D6949",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,

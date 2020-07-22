@@ -24,7 +24,7 @@ class MainLogic extends React.Component {
                 this.setState({
                     milisecond: this.state.milisecond +1
                 })
-                if(this.state.milisecond >=1000){
+                if(this.state.milisecond >=50){
                     this.setState({
                         milisecond: this.state.milisecond = 0,
                         seconds: this.state.seconds + 1
