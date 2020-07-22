@@ -6,15 +6,20 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  background: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
   text :{
     textAlign:"center",
     fontFamily: "Palatino",
     fontSize: 20,
+    color: "white"
   },
   image: {
     height:50,
     width:150,
-    backgroundColor: "pink",
+    backgroundColor: "#2D6949",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     borderBottomLeftRadius: 20,
@@ -26,13 +31,13 @@ export default StyleSheet.create({
   circle:{
     height:300,
     width:300,
-    backgroundColor: "pink",
+    backgroundColor: "#91E2AF",
     borderRadius: 300/2,
     paddingTop: 10,
     paddingRight: 50,
     marginBottom: 30,
     paddingLeft: 50,
-    borderColor:"red",
+    borderColor:"#2D6949",
     borderWidth: 10,
   },
   water:{
@@ -44,5 +49,12 @@ export default StyleSheet.create({
     marginBottom: 30,
     paddingLeft: 50,
     bottom: 0,
+  },
+  timer:{
+    paddingBottom: 50,
+    alignItems: "center",
+    fontFamily: "Palatino",
+    fontSize: 61,
+    color:"#2D6949",
   }
 });
