@@ -17,14 +17,14 @@ render(){
     <AwesomeAlert
       show={showAlert}
       showProgress={false}
-      title="AwesomeAlert"
-      message="I have a message for you!"
+      title="Warning"
+      message="Are you sure you want to exit?"
       closeOnTouchOutside={true}
       closeOnHardwareBackPress={false}
       showCancelButton={true}
       showConfirmButton={true}
-      cancelText="No, cancel"
-      confirmText="Yes, delete it"
+      cancelText="No, I don't"
+      confirmText="Yes, I want to exit"
       confirmButtonColor="#DD6B55"
       onCancelPressed={() => {
           this.hideAlert();
