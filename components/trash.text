@@ -1,0 +1,15 @@
+      let newSelectedTime = this.state.selectedTime.split(':');
+      let stringSelectedTime = newSelectedTime[0] + '.' + newSelectedTime[1]+'.'+newSelectedTime[2];
+      const decimalTime = parseFloat(stringSelectedTime);
+      // this._interval = setInterval(()=>{
+      //   //do something every 1 second
+      //   this.setState({
+      //     selectedTime: stringSelectedTime
+      //   })
+      // }, 1000)
+
+      this._interval = setInterval(()=>{
+        this.setState({
+          selectedTime: decimalTime
+        })
+      }, 1000)

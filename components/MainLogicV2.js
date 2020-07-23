@@ -13,21 +13,27 @@ class MainLogicV2 extends React.Component {
       selectedTime: '00:00:00',
     }
   }
-
-  parseSelectedTime = (input) => {
-
-  }
-
   handlePress = ()=>{
     if (this.state.text === 'START' && this.state.selectedTime !=='00:00:00') 
     {
       this.setState({
           text: 'STOP'
       })
+      let newSelectedTime = this.state.selectedTime.split(':');
+      let minutes = parseInt(newSelectedTime[1]);
+      //converts minutes to seconds
+      let realTime = 60 * minutes;
+
       this._interval = setInterval(()=>{
-        //do something every 1 second
+
+        realTime = realTime-1;
+        const resultMinutes = parseInt(realTime/60);
+        //%divides full amount of seconds (45min = 2700 seconds) into 60s
+        const resultSeconds = realTime % 60;
+        console.log(resultMinutes);
+        let result = "00"+":"+resultMinutes+":"+resultSeconds;
         this.setState({
-          selectedTime: parseInt(this.state.selectedTime)
+          selectedTime: result
         })
       }, 1000)
     } 
