@@ -2,6 +2,7 @@ import React from "react";
 import { Text, TouchableOpacity, View, Image, ImageBackground } from "react-native";
 import styles from "../styles";
 import AwesomeAlert from 'react-native-awesome-alerts';
+import DropdownThing from './DropdownThing';
 
 class MainLogic extends React.Component {
     constructor() {
@@ -74,6 +75,7 @@ class MainLogic extends React.Component {
                 <View>
                     <Text style={styles.timer}>{this.state.hours} : {this.state.minute} : {this.state.seconds} </Text>
                 </View>
+                <DropdownThing/>
                 <View>
                     <TouchableOpacity style={styles.circle}>
                         <View style={styles.center}>
