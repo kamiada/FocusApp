@@ -13,8 +13,9 @@ class MainLogicV2 extends React.Component {
       selectedTime: '00:00:00',
     }
   }
-  convertStringToDecimalTime = () =>{
-    
+
+  parseSelectedTime = (input) => {
+
   }
 
   handlePress = ()=>{
@@ -23,12 +24,19 @@ class MainLogicV2 extends React.Component {
       this.setState({
           text: 'STOP'
       })
+      this._interval = setInterval(()=>{
+        //do something every 1 second
+        this.setState({
+          selectedTime: parseInt(this.state.selectedTime)
+        })
+      }, 1000)
     } 
       if(this.state.text === 'STOP'){
         this.setState({
           text:'START',
           selectedTime:'00:00:00'
         })
+        clearInterval(this._interval);
       }
   }
 
