@@ -57,6 +57,16 @@ class MainLogic extends React.Component {
             this.showAlert();
         }
     }
+    resetState = () => {
+        this.setState({
+            text: 'START',
+            milisecond: this.state.milisecond = 0,
+            seconds: this.state.seconds = 0,
+            minute: this.state.minute = 0,
+            hours: this.state.hours = 0
+        })
+        clearInterval(this._interval);
+    }
     render() {
         const { showAlert } = this.state;
         return (
@@ -91,14 +101,6 @@ class MainLogic extends React.Component {
                     }}
                     onConfirmPressed={() => {
                         this.hideAlert();
-                        this.setState({
-                            text: 'START',
-                            milisecond: this.state.milisecond = 0,
-                            seconds: this.state.seconds = 0,
-                            minute: this.state.minute = 0,
-                            hours: this.state.hours = 0
-                        })
-                        clearInterval(this._interval);
                     }}
                 />
             </View>
