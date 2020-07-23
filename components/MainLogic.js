@@ -1,7 +1,6 @@
 import React from "react";
 import { Text, TouchableOpacity, View, Image, ImageBackground } from "react-native";
 import styles from "../styles";
-import Alert from "./Alert";
 import AwesomeAlert from 'react-native-awesome-alerts';
 
 class MainLogic extends React.Component {
@@ -54,19 +53,8 @@ class MainLogic extends React.Component {
                     })
                 }
             })
-        }
-        else if (this.state.text === 'STOP') {
+        } if(this.state.text ==='STOP'){
             this.showAlert();
-            if (this.cancelText === "No, I don't") {
-                this.setState({
-                    text: 'START',
-                    milisecond: this.state.milisecond = 0,
-                    seconds: this.state.seconds = 0,
-                    minute: this.state.minute = 0,
-                    hours: this.state.hours = 0
-                })
-                clearInterval(this._interval);
-            }
         }
     }
     render() {
@@ -103,6 +91,14 @@ class MainLogic extends React.Component {
                     }}
                     onConfirmPressed={() => {
                         this.hideAlert();
+                        this.setState({
+                            text: 'START',
+                            milisecond: this.state.milisecond = 0,
+                            seconds: this.state.seconds = 0,
+                            minute: this.state.minute = 0,
+                            hours: this.state.hours = 0
+                        })
+                        clearInterval(this._interval);
                     }}
                 />
             </View>
