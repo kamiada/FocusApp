@@ -2,7 +2,7 @@ import React from "react";
 import { Text, TouchableOpacity, View, Image, ImageBackground } from "react-native";
 import styles from "../styles";
 import AwesomeAlert from 'react-native-awesome-alerts';
-import DropdownThing from './DropdownThing';
+import DropdownMenu from 'react-native-dropdown-menu';
 
 class MainLogic extends React.Component {
     constructor() {
@@ -13,7 +13,8 @@ class MainLogic extends React.Component {
             minute: 0,
             seconds: 0,
             milisecond: 0,
-            showAlert: false
+            showAlert: false,
+            pickedTime: ''
         }
     }
     showAlert = () => {
@@ -54,7 +55,7 @@ class MainLogic extends React.Component {
                     })
                 }
             })
-        } if(this.state.text ==='STOP'){
+        } if (this.state.text === 'STOP') {
             this.showAlert();
         }
     }
@@ -70,12 +71,24 @@ class MainLogic extends React.Component {
     }
     render() {
         const { showAlert } = this.state;
+        const formatTime = [["00:45:00", "01:00:00"]];
         return (
             <View style={styles.background}>
-                <View>
-                    <Text style={styles.timer}>{this.state.hours} : {this.state.minute} : {this.state.seconds} </Text>
+                <View style={{ flex: 1 }}>
+                    <View>
+                        <Text style={styles.timer}>{this.state.hours} : {this.state.minute} : {this.state.seconds} </Text>
+                    </View>
+                    <View style={{ height: 64 }} />
+                    <DropdownMenu
+                        style={styles.dropdownStyle}
+                        bgColor={'#AAF0C8'}
+                        tintColor={'#666666'}
+                        activityTintColor={'green'}
+                        handler={(selection) => this.setState({ pickedTime: formatTime[selection] })}
+                        data={formatTime}
+                    >
+                    </DropdownMenu>
                 </View>
-                <DropdownThing/>
                 <View>
                     <TouchableOpacity style={styles.circle}>
                         <View style={styles.center}>

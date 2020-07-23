@@ -32,6 +32,7 @@ export default StyleSheet.create({
     color: "white"
   },
   image: {
+    marginBottom:150,
     height:50,
     width:250,
     backgroundColor: "#2D6949",
@@ -66,10 +67,20 @@ export default StyleSheet.create({
     bottom: 0,
   },
   timer:{
+    paddingTop:90,
     paddingBottom: 50,
     alignItems: "center",
+    justifyContent:'center',
     fontFamily: "Palatino",
     fontSize: 61,
     color:"#2D6949",
+  },
+  dropdownStyle:{
+    flex:1,
+    flexShrink: 3,
+    height: 64,
+    marginBottom:140,
+    alignItems: 'center',
+    justifyContent:'center',
   }
 });

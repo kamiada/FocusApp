@@ -1,45 +1,51 @@
 import React from "react";
 import { TouchableWithoutFeedback, Text, View } from "react-native";
 import styles from "../styles";
-import { Picker } from '@react-native-community/picker';
+import DropdownMenu from 'react-native-dropdown-menu';
 
 class DropdownThing extends React.Component {
   constructor() {
     super();
     this.state = {
-      dropdown: [{
-        id: 1,
+      dropdownSelection: [{
         hours: 1,
         minute: 20,
         seconds: 0,
         miliseconds: 0,
       },
       {
-        id: 2,
         hours: 0,
         minute: 20,
         seconds: 0,
         miliseconds: 0
       }
       ],
-      option1: 1
+      option1: 1,
+      option2:[[
+        1,
+        2,
+        'test3'
+      ]],
+      text: ''
     }
   }
   render() {
-    const { dropdown } = this.state;
-    console.log(JSON.stringify(dropdown[0]));
-    const options = JSON.stringify(dropdown[0]).toString();
+    const { dropdownSelection } = this.state;
+    var data = [["C", "Java", "JavaScript", "PHP"]];
+    const formatTime = [["00:45:00", "01:00:00"]];
+    let result = dropdownSelection.map(a => a);
     return (
-      <View>
-        <Picker
-          selectedValue={dropdown[0].value}
-          style={{ height: 50, width: 200 }}
-          onValueChange={(itemValue, itemIndex) =>
-            this.setState({ options: itemValue })
-          }>
-          <Picker.Item label={this.state.option1.toString()} value={this.state.option1.toString()}/>
-          <Picker.Item label={options} value={options} />
-        </Picker>
+      <View style={{flex: 1}}>
+       <View style={{height: 64}} />
+        <DropdownMenu
+          style={{flex: 1}}
+          bgColor={'white'}
+          tintColor={'#666666'}
+          activityTintColor={'green'}
+          handler={(selection) => this.setState({text: formatTime[selection]})}
+          data={formatTime}
+        >
+        </DropdownMenu>
       </View>
     );
   }
