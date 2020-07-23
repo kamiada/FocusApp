@@ -1,8 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, View, Image, ImageBackground } from "react-native";
 import styles from "../styles";
-import {LinearGradient} from 'expo-linear-gradient'
-
+import Alert from "./Alert";
 
 class MainLogic extends React.Component {
     constructor(){

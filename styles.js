@@ -71,5 +71,8 @@ export default StyleSheet.create({
     fontFamily: "Palatino",
     fontSize: 61,
     color:"#2D6949",
+  },
+  alert:{
+    
   }
 });
