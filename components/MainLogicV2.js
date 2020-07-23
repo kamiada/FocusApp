@@ -30,11 +30,20 @@ class MainLogicV2 extends React.Component {
         const resultMinutes = parseInt(realTime/60);
         //%divides full amount of seconds (45min = 2700 seconds) into 60s
         const resultSeconds = realTime % 60;
-        console.log(resultMinutes);
         let result = "00"+":"+resultMinutes+":"+resultSeconds;
         this.setState({
           selectedTime: result
         })
+
+        if(result.toString === '00:0:0' || parseInt(result)<-1)
+        {
+          this.setState({
+          text:'START',
+          selectedTime:'00:00:00'
+        })
+          clearInterval(this._interval);
+
+        }
       }, 1000)
     } 
       if(this.state.text === 'STOP'){
@@ -47,7 +56,7 @@ class MainLogicV2 extends React.Component {
   }
 
   render() {
-    const data = [["00:45:00", "01:00:00","00:01:50"]];
+    const data = [["00:45:00", "00:25:00","00:01:50", "00:00:05"]];
     return (
         <View style={{ flex: 1 }}>
           <View style={{ height: 64 }} />
