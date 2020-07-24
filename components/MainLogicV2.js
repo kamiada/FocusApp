@@ -35,7 +35,7 @@ class MainLogicV2 extends React.Component {
           selectedTime: result
         })
 
-        if(result.toString === '00:0:0' || parseInt(result)<-1)
+        if(result.toString() === "00:0:0" || resultMinutes <=0 && resultSeconds <=0)
         {
           this.setState({
           text:'START',
