@@ -27,7 +27,7 @@ class PrettyCircle extends React.Component {
             }}>
               <Wave
                 ref={ref => this._waveRect = ref}
-                // style={styles.wave}
+                style={styles.waveball}
                 H={30}
                 waveParams={[
                   { A: 10, T: 180, fill: '#62c2ff' },

@@ -58,5 +58,18 @@ wave_container:{
   flexDirection: "column" ,
   alignItems: "center",
   justifyContent: "center",
+  marginVertical: 10,
+  marginHorizontal: 20,
 },
+wave: {
+  width: 100,
+  aspectRatio: 1,
+  overflow: "hidden",
+},
+waveball:{
+  width: 100,
+  aspectRatio: 3/4,
+  borderRadius: 50,
+  overflow: "hidden",
+}
 });
