@@ -4,6 +4,7 @@ import styles from "../stylesV2";
 import AwesomeAlert from 'react-native-awesome-alerts';
 import DropdownMenu from 'react-native-dropdown-menu';
 import MainLogic from "./MainLogic";
+import PrettyCircle from './PrettyCircle';
 
 class MainLogicV2 extends React.Component {
   constructor() {
@@ -76,8 +77,11 @@ class MainLogicV2 extends React.Component {
             data={data}
           >
           </DropdownMenu>
+
+         <PrettyCircle/>
+
           <View>
-          <TouchableOpacity style={styles.image} onPress={this.handlePress}>
+          <TouchableOpacity style={styles.button} onPress={this.handlePress}>
             <Text style={styles.lettering}>{this.state.text}</Text>
           </TouchableOpacity>
         </View>

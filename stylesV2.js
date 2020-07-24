@@ -7,10 +7,19 @@ background:{
   alignItems: "center",
   justifyContent: "center",
 },
-button:{
-
+circle:{
+  height:300,
+  width:300,
+  backgroundColor: "#91E2AF",
+  borderRadius: 300/2,
+  paddingTop: 10,
+  paddingRight: 50,
+  marginBottom: 30,
+  paddingLeft: 50,
+  borderColor:"#2D6949",
+  borderWidth: 10,
 },
-image:{
+button:{
   marginBottom:150,
   height:50,
   width:250,
