@@ -5,4 +5,9 @@ The purpose of it is to make simple focus type of mobile application of iPhone (
 
 Also, best websites ever: 
 https://csstox.surge.sh/
+
+
 https://github.com/react-native-training/react-native-fonts
+
+
+Wave: https://reactnativeexample.com/waveview-for-react-native/
