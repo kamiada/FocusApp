@@ -48,14 +48,21 @@ class MainLogicV2 extends React.Component {
       }, 1000)
     } 
       if(this.state.text === 'STOP'){
-        this.setState({
-          text:'START',
-          selectedTime:'00:00:00'
-        })
-        clearInterval(this._interval);
+        // this.setState({
+        //   text:'START',
+        //   selectedTime:'00:00:00'
+        // })
+        // clearInterval(this._interval);
+        this.resetState();
       }
   }
-
+  resetState = () =>{
+    this.setState({
+      text:'START',
+      selectedTime:'00:00:00'
+    })
+    clearInterval(this._interval);
+  }
   render() {
     const data = [["00:45:00", "00:25:00","00:01:50", "00:00:05"]];
     return (

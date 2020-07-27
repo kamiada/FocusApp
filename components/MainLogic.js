@@ -14,7 +14,8 @@ class MainLogic extends React.Component {
             seconds: 0,
             milisecond: 0,
             showAlert: false,
-            pickedTime: ''
+            pickedTime: '',
+            pause: false
         }
     }
     showAlert = () => {
@@ -113,9 +114,11 @@ class MainLogic extends React.Component {
                     confirmButtonColor="#DD6B55"
                     onCancelPressed={() => {
                         this.hideAlert();
+                        clearInterval(this._interval);
                     }}
                     onConfirmPressed={() => {
                         this.hideAlert();
+                        this.resetState();
                     }}
                 />
             </View>
