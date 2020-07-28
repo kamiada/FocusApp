@@ -11,3 +11,6 @@ https://github.com/react-native-training/react-native-fonts
 
 
 Wave: https://reactnativeexample.com/waveview-for-react-native/
+
+
+The app is quite basic, but finally finished (more or less - functionality is there, styling could be improved) and it was pretty fun to do it. 
