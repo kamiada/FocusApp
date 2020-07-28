@@ -11,23 +11,32 @@ class MainLogicV2 extends React.Component {
     this.state = {
       text: 'START',
       selectedTime: '00:00:00',
-      pause: false,
-      showAlert: false
+      showAlert: false,
+      pause: false
     }
   }
   showAlert = () => {
     this.setState({
       showAlert: true,
+      //somehow ignores this set state?!
       pause: true
     })
+    console.log('showAlert', this.state.pause);
     this.checkInterval();
   }
-  hideAlert = () => {
+  hideAlertConfirm = () => {
     this.setState({
       showAlert: false,
       pause: false
     })
-    this.checkInterval();
+    this.resetState();
+  }
+  hideCancelAlert = () => {
+    this.setState({
+      showAlert: false,
+      pause: false
+    }) 
+    // this.checkInterval();
   }
 
 
@@ -58,14 +67,16 @@ class MainLogicV2 extends React.Component {
   }
 
   checkInterval = () => {
-    if (this.state.pause === true) {
+    const { pause } = this.state;
+    // pause === true ? clearInterval(this._interval) : console.log(pause);
+
+
+    if (pause === true) {
       clearInterval(this._interval);
-    }
-    //else if pause is false,
-    else if(this.state.pause === false){
-    //check current value of time
-    this.startCountdown();
-    //continue countdown
+      console.log('checkInterval', pause);
+    }else{
+      // this.startCountdown();
+      console.log('else', pause);
     }
   }
 
@@ -75,13 +86,9 @@ class MainLogicV2 extends React.Component {
         text: 'STOP',
         pause: false
       })
-      this.checkInterval();
       this.startCountdown();
     }
     if (this.state.text === 'STOP') {
-      this.setState({
-        pause: true
-      })
       this.showAlert();
     }
   }
@@ -136,11 +143,10 @@ class MainLogicV2 extends React.Component {
           confirmText="Yes, I want to exit"
           confirmButtonColor="#DD6B55"
           onCancelPressed={() => {
-            this.hideAlert();
+            this.hideCancelAlert();
           }}
           onConfirmPressed={() => {
-            this.hideAlert();
-            this.resetState();
+            this.hideAlertConfirm();
           }}
         />
       </View>
