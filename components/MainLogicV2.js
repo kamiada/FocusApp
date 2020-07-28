@@ -12,40 +12,52 @@ class MainLogicV2 extends React.Component {
     this.state = {
       text: 'START',
       selectedTime: '00:00:00',
+      pause: false
     }
   }
+
+  startCountdown = () => {
+    let newSelectedTime = this.state.selectedTime.split(':');
+    let minutes = parseInt(newSelectedTime[1]);
+    //converts minutes to seconds
+    let realTime = 60 * minutes;
+    this._interval = setInterval(()=>{
+
+      realTime = realTime-1;
+      const resultMinutes = parseInt(realTime/60);
+      //%divides full amount of seconds (45min = 2700 seconds) into 60s
+      const resultSeconds = realTime % 60;
+      let result = "00"+":"+resultMinutes+":"+resultSeconds;
+      this.setState({
+        selectedTime: result
+      })
+
+      if(result.toString() === "00:0:0" || resultMinutes <=0 && resultSeconds <=0)
+      {
+        this.setState({
+        text:'START',
+        selectedTime:'00:00:00'
+      })
+        clearInterval(this._interval);
+
+      }
+    }, 1000)
+  }
+
+  checkInterval = () =>{
+    if(this.state.pause === true){
+      clearInterval(this._interval);
+    }
+  }
+
   handlePress = ()=>{
     if (this.state.text === 'START' && this.state.selectedTime !=='00:00:00') 
     {
       this.setState({
-          text: 'STOP'
+          text: 'STOP',
       })
-      let newSelectedTime = this.state.selectedTime.split(':');
-      let minutes = parseInt(newSelectedTime[1]);
-      //converts minutes to seconds
-      let realTime = 60 * minutes;
-
-      this._interval = setInterval(()=>{
-
-        realTime = realTime-1;
-        const resultMinutes = parseInt(realTime/60);
-        //%divides full amount of seconds (45min = 2700 seconds) into 60s
-        const resultSeconds = realTime % 60;
-        let result = "00"+":"+resultMinutes+":"+resultSeconds;
-        this.setState({
-          selectedTime: result
-        })
-
-        if(result.toString() === "00:0:0" || resultMinutes <=0 && resultSeconds <=0)
-        {
-          this.setState({
-          text:'START',
-          selectedTime:'00:00:00'
-        })
-          clearInterval(this._interval);
-
-        }
-      }, 1000)
+      this.checkInterval();
+      this.startCountdown();
     } 
       if(this.state.text === 'STOP'){
         // this.setState({
@@ -59,7 +71,7 @@ class MainLogicV2 extends React.Component {
   resetState = () =>{
     this.setState({
       text:'START',
-      selectedTime:'00:00:00'
+      selectedTime:'00:00:00', 
     })
     clearInterval(this._interval);
   }

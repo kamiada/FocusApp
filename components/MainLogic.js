@@ -18,17 +18,30 @@ class MainLogic extends React.Component {
             pause: false
         }
     }
+    checkInterval = () =>{
+        if(this.state.pause === true){
+            clearInterval(this._interval);
+        }
+    }
+
     showAlert = () => {
         this.setState({
-            showAlert: true
+            showAlert: true,
+            pause: true
         })
+        this.checkInterval();
+
     }
     hideAlert = () => {
         this.setState({
-            showAlert: false
+            showAlert: false,
+            pause: false
         })
+        this.checkInterval();
     }
     handlePress = () => {
+        this.checkInterval();
+
         if (this.state.text === 'START') {
             this.setState({
                 text: 'STOP'

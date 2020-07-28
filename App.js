@@ -9,7 +9,7 @@ export default function App() {
   return (
     <View style={styles.container}>
     <LinearGradient colors={['#A2CEEF','#AAF0C8' ]} style={styles.gradient}/>
-      <MainLogic/>
+      <MainLogicV2/>
   </View>
   );
 }
