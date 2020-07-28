@@ -111,6 +111,7 @@ class MainLogicV2 extends React.Component {
         </View>
         <DropdownMenu
           style={styles.dropdownStyle}
+          useNativeDriver= {true}
           bgColor={'#AAF0C8'}
           tintColor={'#2D6949'}
           activityTintColor={'green'}

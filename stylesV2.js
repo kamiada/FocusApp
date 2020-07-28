@@ -37,7 +37,7 @@ dropdownStyle:{
   flexShrink: 3,
   height: 64,
   alignItems: 'center',
-  justifyContent:'center',
+  justifyContent:'center'
 },
 timer:{
   paddingTop:90,
