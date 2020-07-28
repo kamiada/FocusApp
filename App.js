@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import MainLogic from './components/MainLogic';
+import MainLogic from './testing_grounds/MainLogic';
 import MainLogicV2 from './components/MainLogicV2';
-import styles from './styles';
+import styles from './testing_grounds/styles';
 import {LinearGradient} from 'expo-linear-gradient'
 
 export default function App() {

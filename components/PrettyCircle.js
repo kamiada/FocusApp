@@ -7,14 +7,14 @@ import Wave from "react-native-waveview";
 class PrettyCircle extends React.Component {
   render() {
     return (
-      <View>
-        <TouchableOpacity style={styles.circle}>
+      <View style={styles.background}>
+        <TouchableOpacity style={{ flex: 1 }}>
 
           <View style={styles.wave_container}>
               <Wave
                 ref={ref => this._waveRect = ref}
                 style={styles.waveball}
-                H={30}
+                H={130}
                 waveParams={[
                   { A: 10, T: 180, fill: '#62c2ff' },
                   { A: 15, T: 140, fill: '#0087dc' },

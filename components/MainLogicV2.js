@@ -105,8 +105,8 @@ class MainLogicV2 extends React.Component {
     const data = [["00:45:00", "00:25:00", "00:01:50", "00:00:05"]];
     return (
       <View style={{ flex: 1 }}>
-        <View style={{ height: 64 }} />
-        <View>
+        <View style={{ height: 64}} />
+        <View style={styles.background}>
           <Text style={styles.timer}>{this.state.selectedTime}</Text>
         </View>
         <DropdownMenu
@@ -124,9 +124,11 @@ class MainLogicV2 extends React.Component {
         >
         </DropdownMenu>
 
+        <View style={{flex:2}}>
         <PrettyCircle />
+        </View>
 
-        <View>
+        <View style={styles.background}>
           <TouchableOpacity style={styles.button} onPress={this.handlePress}>
             <Text style={styles.lettering}>{this.state.text}</Text>
           </TouchableOpacity>

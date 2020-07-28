@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, TouchableOpacity, View, Image, ImageBackground } from "react-native";
-import styles from "../styles";
+import styles from "./styles";
 import AwesomeAlert from 'react-native-awesome-alerts';
 import DropdownMenu from 'react-native-dropdown-menu';
 

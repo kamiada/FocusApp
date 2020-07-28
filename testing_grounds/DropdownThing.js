@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableWithoutFeedback, Text, View } from "react-native";
-import styles from "../styles";
+import styles from "./styles";
 import DropdownMenu from 'react-native-dropdown-menu';
 
 class DropdownThing extends React.Component {
